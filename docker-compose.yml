@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  rag-app:
+    build: .
+    container_name: rag-app
+    ports:
+      - "8000:8000"  # Map container port 8000 to host 8000
+    volumes:
+      - ./app:/app/app  # Optional: mount local app for live updates
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
